@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Audio Chatbot</h1>
+  
+  <div class="input-section">
+    <textarea 
+      [(ngModel)]="question" 
+      placeholder="Type your question here..."
+      rows="3">
+    </textarea>
+    <button 
+      (click)="askQuestion()" 
+      [disabled]="!question.trim() || isLoading"
+      class="ask-btn">
+      {{ isLoading ? 'Processing...' : 'Ask' }}
+    </button>
+  </div>
+
+  <div class="status" *ngIf="status">
+    {{ status }}
+  </div>
+
+
+</div>
